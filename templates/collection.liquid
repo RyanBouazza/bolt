@@ -1,0 +1,37 @@
+{%- comment -%}
+
+Default collection template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/collection-liquid
+
+Objects Referenced:
+ • collection https://help.shopify.com/en/themes/liquid/objects/collection
+ • settings https://help.shopify.com/en/themes/liquid/objects#settings
+
+{%- endcomment -%}
+
+<article class="collection">
+  <h1 class="collection__title">{{ collection.title }}</h1>
+  {% if collection.description != blank %}
+    <div class="collection__description">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+  {% if collection.image %}
+    {% include 'image--responsive' with image: collection.image, wrapper_class: 'collection__image' %}
+  {% endif %}
+
+  {% paginate collection.products by settings.products_page_size %}
+    {% include 'collection__toolbar' %}
+    <div class="collection__products">
+      {% for product in collection.products %}
+        {% include 'product__tile' %}
+      {% else %}
+        <div class="collection__empty">
+          <p>{{ 'collections.general.no_matches' | t }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% include 'paginate' %}
+  {% endpaginate %}
+</article>

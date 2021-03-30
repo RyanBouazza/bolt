@@ -1,0 +1,27 @@
+{%- comment -%}
+
+Default product template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/product-liquid
+
+Objects Referenced:
+ • product https://help.shopify.com/en/themes/liquid/objects/product
+
+{%- endcomment -%}
+
+{% include 'product__classes' with base_class: 'product' %}
+<article class="{{ product_classes }}">
+  <h1 class="product__title">{{ product.title }}</h1>
+  {% include 'product__images' %}
+  {% include 'product__pricing' %}
+  {% include 'product__availability' %}
+  {% include 'product__tags' %}
+  {% include 'product__attributes' %}
+  {% include 'form--product' %}
+  {% if product.description != blank %}
+    <div class="product__description">
+      {{ product.description }}
+    </div>
+  {% endif %}
+</article>
+{% include 'product__schema' %}

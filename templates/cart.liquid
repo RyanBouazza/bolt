@@ -1,0 +1,25 @@
+{%- comment -%}
+
+Default cart template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/cart-liquid
+
+Objects Referenced:
+ • cart https://help.shopify.com/en/themes/liquid/objects/cart
+
+{%- endcomment -%}
+
+{% include 'cart__classes' %}
+<article class="{{ cart_classes }}">
+  <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
+  {% if cart.item_count > 0 %}
+    {% include 'cart__form' %}
+  {% else %}
+    <div class="cart__empty">
+    <p>{{ 'cart.general.empty' | t }}</p>
+    <p>
+      <a href="/">{{ 'cart.general.continue_shopping' | t }}</a>
+    </p>
+  </div>
+  {% endif %}
+</article>

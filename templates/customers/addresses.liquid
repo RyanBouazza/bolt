@@ -1,0 +1,47 @@
+{%- comment -%}
+
+Default collection template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/customers-addresses
+
+Objects Referenced:
+ • customer_address https://help.shopify.com/en/themes/liquid/objects/customer-address
+ • settings https://help.shopify.com/en/themes/liquid/objects#settings
+
+{%- endcomment -%}
+
+<article class="customer-addresses">
+  <h1 class="customer-addresses__title">{{ 'customer.addresses.title' | t }}</h1>
+  <p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
+
+  <div class="customer-addresses__new" id="CustomerAddressNew">
+    {% include 'form--customer_address' %}
+    <p class="customer-addresses__actions"><a href="#CustomerAddressFormNew" class="button">{{ 'customer.addresses.add_new' | t }}</a></p>
+  </div>
+
+  <div class="customer-addresses__list">
+    {% paginate customer.addresses by settings.addresses_page_size %}
+      {% for address in customer.addresses %}
+        <div class="customer-address {% if address == customer.default_address %}customer-address--default{% endif %}" id="CustomerAddress{{ address.id }}">
+          {% if address == customer.default_address %}
+            <p class="customer-address__type">{{ 'customer.addresses.default' | t }}</p>
+          {% endif %}
+          {% include 'address' %}
+          <div class="customer-address__actions">
+            <a class="customer-address__action customer-address__action--edit"
+              href="#CustomerAddressForm{{ address.id }}">
+              {{- 'customer.addresses.edit' | t -}}
+            </a>
+            <a class="customer-address__action customer-address__action--delete"
+              href="/account/addresses/{{ address.id }}"
+              data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+              {{- 'customer.addresses.delete' | t -}}
+            </a>
+          </div>
+        </div>
+        {% include 'form--customer_address' with customer_address: address %}
+      {% endfor %}
+      {% include 'paginate' %}
+    {% endpaginate %}
+  </div>
+</article>

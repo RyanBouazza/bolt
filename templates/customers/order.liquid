@@ -1,0 +1,47 @@
+{%- comment -%}
+
+Default order template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/customers-order
+
+Objects Referenced:
+ • order https://help.shopify.com/en/themes/liquid/objects/order
+
+{%- endcomment -%}
+
+<article class="customer-order {% if order.cancelled %}customer-order--cancelled{% endif %}">
+  <h1 class="customer-order__title">{{ 'customer.order.title' | t: name: order.name }}</h1>
+  <p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
+
+  <div class="order__info">
+    {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
+    <p class="order__date order__date--created">{{ 'customer.order.date_html' | t: date: order_date }}</p>
+
+    {% if order.cancelled %}
+      <div class="order__cancelation">
+        {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+        <p order__date order__date--cancelled>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</p>
+        <p order__cancel-reason>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <table class="order__items">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">{{ 'customer.order.product' | t }}</th>
+        <th scope="col">{{ 'customer.order.price' | t }}</th>
+        <th scope="col">{{ 'customer.order.quantity' | t }}</th>
+        <th scope="col">{{ 'customer.order.total' | t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line_item in order.line_items %}
+        {% include 'line_item--order' %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include 'order__totals' %}
+  {% include 'order__details' %}
+</article>

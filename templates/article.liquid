@@ -1,0 +1,40 @@
+{%- comment -%}
+
+Default blog article template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/article-liquid
+
+Objects Referenced:
+ • article https://help.shopify.com/en/themes/liquid/objects/article
+ • blog    https://help.shopify.com/en/themes/liquid/objects/blog
+
+{%- endcomment -%}
+
+<article class="article">
+  <h1 class="article__title">{{ article.title }}</h1>
+
+  <div class="article__publication-date">
+    {{ article.published_at | time_tag: format: 'date' }}
+  </div>
+
+  {% if article.image %}
+    {% include 'image--responsive' with image: article.image, wrapper_class: 'article__image' %}
+  {% endif %}
+
+  <div class="article__content">
+    {{ article.content }}
+  </div>
+
+  <div class="article__tags">
+    {% include 'taglist' with tags: article.tags %}
+  </div>
+
+  <aside class="article__author">
+    {% include 'article__user' %}
+  </aside>
+
+  {% if blog.comments_enabled? %}
+    {% include 'article__comments' %}
+  {% endif %}
+</article>
+{% include 'article__schema' %}

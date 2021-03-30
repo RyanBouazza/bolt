@@ -1,0 +1,18 @@
+{%- comment -%}
+
+Contact page template.
+
+Documentation: https://help.shopify.com/en/themes/customization/forms/add-contact-form
+
+Objects Referenced
+ • page https://help.shopify.com/en/themes/liquid/objects/page
+
+{%- endcomment -%}
+
+<article class="page page--contact">
+  <h1 class="page__title">{{ page.title }}</h1>
+  <div class="page__content">
+    {{ page.content }}
+  </div>
+  {% include 'form--contact' %}
+</article>

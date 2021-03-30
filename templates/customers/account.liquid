@@ -1,0 +1,59 @@
+{%- comment -%}
+
+Default collection template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/customers-account
+
+Objects Referenced:
+ • customer https://help.shopify.com/en/themes/liquid/objects/customer
+ • settings https://help.shopify.com/en/themes/liquid/objects#settings
+
+{%- endcomment -%}
+
+<article class="customer-account">
+  <h1 class="customer-account__title">{{ 'customer.account.title' | t }}</h1>
+  <p>{{ 'layout.customer.log_out' | t | customer_logout_link }}</p>
+
+  <div class="customer-account__dashboard">
+    <div class="customer-account__section customer-account__section--orders">
+      <h2 class="customer-account__subtitle">{{ 'customer.orders.title' | t }}</h2>
+      <div class="customer-orders {% if customer.orders.size == 0 %}customer-orders--empty{% endif %}">
+        {% if customer.orders.size > 0 %}
+          {% paginate customer.orders by settings.orders_page_size %}
+            <table class="customer-orders__table">
+              <thead>
+                <tr>
+                  <th scope="col">{{ 'customer.orders.order_number' | t }}</th>
+                  <th scope="col">{{ 'customer.orders.date' | t }}</th>
+                  <th scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+                  <th scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                  <th scope="col">{{ 'customer.orders.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in customer.orders %}
+                  {% include 'order__summary' %}
+                {% endfor %}
+              </tbody>
+            </table>
+            {% include 'paginate' %}
+          {% endpaginate %}
+        {% else %}
+          <p>{{ 'customer.orders.none' | t }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="customer-account__section customer-account__section--addresses">
+      <h2 class="customer-account__subtitle">{{ 'customer.account.details' | t }}</h2>
+      <div class="customer-address customer-address--default">
+        <p class="customer-address__type">{{ 'customer.addresses.default' | t }}</p>
+        {% include 'address' with customer.default_address %}
+      </div>
+      <div class="customer-account__actions">
+        <a href="/account/addresses">{{ 'customer.account.view_addresses' | t }}
+          <span class="customer-addresses__count">{{ customer.addresses_count }}</span></a>
+      </div>
+    </div>
+  </div>
+</article>

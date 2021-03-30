@@ -1,0 +1,29 @@
+{%- comment -%}
+
+Default customer login template.
+
+Documentation: https://help.shopify.com/en/themes/development/templates/customers-login
+
+{%- endcomment -%}
+
+<article class="customer-login">
+  <h1 class="customer-login__title">{{ 'customer.login.title' | t }}</h1>
+
+  <div class="customer-login__login">
+    {% include 'form--customer_login' %}
+  </div>
+
+  <div class="customer-login__recover">
+    {% include 'form--recover_customer_password' %}
+  </div>
+
+  {% comment %}
+    If accounts are set as optional, the following will be shown as an option
+    during checkout, not on the default /login page.
+  {% endcomment %}
+  {% if shop.checkout.guest_login %}
+    <div class="customer-login__guest">
+      {% include 'form--guest_login' %}
+    </div>
+  {% endif %}
+</article>

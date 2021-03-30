@@ -1,0 +1,217 @@
+{%- comment -%}
+  The Design Styles page is designed to test site wide styles and to act as a resource for developers
+  to browse available stylized components. This page should be updated with site specific styles that
+  are created and populated with other design priorities.
+{%- endcomment -%}
+
+<h1>{{ page.title }}</h1>
+
+<section>
+  <h1>Table of Contents</h1>
+  <ol>
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#typography">Typography</a>
+      <ol>
+        <li><a href="#body-text">Body Text</a></li>
+        <li><a href="#typography-colours">Colours</a></li>
+        <li><a href="#headings">Headings</a></li>
+      </ol>
+    </li>
+    <li><a href="#colours">Colour Palette</a></li>
+    <li><a href="#forms">Forms</a>
+      <ol>
+        <li><a href="#form-controls">Form Controls</a></li>
+        <li><a href="#form-validation">Validation States</a></li>
+      </ol>
+    </li>
+    <li><a href="#buttons">Buttons</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#spacing">Spacing</a></li>
+    <li><a href="#iconography">Iconography</a></li>
+    <li><a href="#imagery">Imagery</a></li>
+    <li><a href="#dos-and-donts">Dos and Don'ts</a></li>
+  </ol>
+</section>
+
+<section>
+  <h1 id="brand">1. Brand</h1>
+</section>
+
+<section>
+  <h1 id="typography">2. Typography</h1>
+  <h2 id="body-text">2.1 Body Text</h2>
+  <p>Bacon ipsum dolor amet cupim alcatra tri-tip strip steak pork chop pastrami pig cow. Frankfurter pork loin spare ribs meatloaf, jowl bacon boudin beef capicola. Pork chop meatloaf salami picanha spare ribs chicken ground round strip steak landjaeger burgdoggen turducken tenderloin pastrami rump ham. Burgdoggen swine capicola drumstick cupim shoulder. Sausage corned beef swine beef meatloaf biltong andouille short ribs tail t-bone flank. Cow pork loin alcatra, fatback strip steak flank doner salami. T-bone meatloaf venison cupim tri-tip ribeye jerky.</p>
+  <code>
+    &lt;p&gt;Bacon ipsum dolor amet cupim alcatra tri-tip strip steak pork chop pastrami pig cow. Frankfurter pork loin spare ribs meatloaf, jowl bacon boudin beef capicola. Pork chop meatloaf salami picanha spare ribs chicken ground round strip steak landjaeger burgdoggen turducken tenderloin pastrami rump ham. Burgdoggen swine capicola drumstick cupim shoulder. Sausage corned beef swine beef meatloaf biltong andouille short ribs tail t-bone flank. Cow pork loin alcatra, fatback strip steak flank doner salami. T-bone meatloaf venison cupim tri-tip ribeye jerky.&lt;/p&gt;
+  </code>
+  <h2 id="typography-colours">2.2 Colours</h2>
+  <h2 id="headings">2.3 Headings</h2>
+  <section>
+    <h1>h1. Heading 1</h1>
+    <code>&lt;h1&gt;h1. Heading 1&lt;/h1&gt;</code>
+    <h2>h2. Heading 2</h2>
+    <code>&lt;h2&gt;h2. Heading 2&lt;/h2&gt;</code>
+    <h3>h3. Heading 3</h3>
+    <code>&lt;h3&gt;h3. Heading 3&lt;/h3&gt;</code>
+    <h4>h4. Heading 4</h4>
+    <code>&lt;h4&gt;h4. Heading 4&lt;/h4&gt;</code>
+    <h5>h5. Heading 5</h5>
+    <code>&lt;h5&gt;h5. Heading 5&lt;/h5&gt;</code>
+    <h6>h6. Heading 6</h6>
+    <code>&lt;h6&gt;h6. Heading 6&lt;/h6&gt;</code>
+  </section>
+</section>
+
+<section>
+  <h1 id="colours">3. Colour Palette</h1>
+</section>
+
+<section>
+  <h1 id="forms">4. Forms</h1>
+  <h2 id="form-controls">4.1 Form Controls</h2>
+  <form>
+    <div>
+      <label for="example-text-input">Text Input</label>
+      <input id="example-text-input" type="text" placeholder="Text Here"/>
+    </div>
+    <div>
+      <label for="example-email-input">Email Input</label>
+      <input id="example-email-input" type="email" placeholder="Email Here">
+    </div>
+    <div>
+      <label for="example-password-input">Password Input</label>
+      <input id="example-password-input" type="password" placeholder="Password Here">
+    </div>
+    <div>
+      <label for="example-form-control-select">Select</label>
+      <select id="example-form-control-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div>
+      <label for="example-form-control-textarea1">Example textarea</label>
+      <textarea id="example-form-control-textarea1" rows="3"></textarea>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" value="">
+        Check this out! Example checkbox
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="exampleRadios" id="example-radios1" value="option1" checked>
+        Example Radio Button 1
+      </label>
+      <label>
+        <input type="radio" name="exampleRadios" id="example-radios2" value="option2">
+        Example Radio Button 2
+      </label>
+    </div>
+  </form>
+  <pre>
+    <code>
+&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;example-text-input&quot;&gt;Text Input&lt;/label&gt;
+    &lt;input id=&quot;example-text-input&quot; type=&quot;text&quot; placeholder=&quot;Text Here&quot;/&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;example-email-input&quot;&gt;Email Input&lt;/label&gt;
+    &lt;input id=&quot;example-email-input&quot; type=&quot;email&quot; placeholder=&quot;Email Here&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;example-password-input&quot;&gt;Password Input&lt;/label&gt;
+    &lt;input id=&quot;example-password-input&quot; type=&quot;password&quot; placeholder=&quot;Password Here&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;example-form-control-select&quot;&gt;Select&lt;/label&gt;
+    &lt;select id=&quot;example-form-control-select&quot;&gt;
+      &lt;option&gt;1&lt;/option&gt;
+      &lt;option&gt;2&lt;/option&gt;
+      &lt;option&gt;3&lt;/option&gt;
+      &lt;option&gt;4&lt;/option&gt;
+      &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;example-form-control-textarea1&quot;&gt;Example textarea&lt;/label&gt;
+    &lt;textarea id=&quot;example-form-control-textarea1&quot; rows=&quot;3&quot;&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;
+      Check this out! Example checkbox
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;exampleRadios&quot; id=&quot;example-radios1&quot; value=&quot;option1&quot; checked&gt;
+      Example Radio Button 1
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;exampleRadios&quot; id=&quot;example-radios2&quot; value=&quot;option2&quot;&gt;
+      Example Radio Button 2
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+    </code>
+  </pre>
+  <h2 id="form-validation">4.2 Validation States</h2>
+</section>
+
+<section>
+  <h1 id="buttons">5. Buttons</h1>
+  <div>
+    <a href="#" role="button">Link</a>
+    <button type="submit">Button</button>
+    <input type="button" value="Input">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </div>
+  <pre>
+    <code>
+&lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
+&lt;button type=&quot;submit&quot;&gt;Button&lt;/button&gt;
+&lt;input type=&quot;button&quot; value=&quot;Input&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h1><a id="components">6. Components</a></h1>
+</section>
+
+<section>
+  <h1><a id="spacing">7. Spacing</a></h1>
+</section>
+
+<section>
+  <h1><a id="iconography">8. Iconography</a></h1>
+</section>
+
+<section>
+  <h1><a id="imagery">9. Imagery</a></h1>
+  {% assign lazy_image = collections['all-products'].image %}
+
+  <h2>Static</h2>
+  {% include 'image--responsive' with image: lazy_image %}
+
+  <h2>Lazy Loaded with srcset</h2>
+  <h3>Full width</h3>
+  {% include 'img_srcset' with lazy_image %}
+
+  <h3>Variable widths</h3>
+  {% include 'img_srcset' with lazy_image, sizes_breakpoints: '1440:480,800:400,320' %}
+  <p class="o-info">Note: The above image loads '1440:480,800:400,320' as the breakpoints, meaning it displays a 480px image for screens &lt;= 1440px, 400px for screens &lt;= 800px and 320px for screens &lt;= 320px. This is useful for example for product tiles that should be 1/3 on desktop, 1/2 on tablet and 1/1 on mobile.</p>
+</section>
+
+<section>
+  <h1><a id="dos-and-donts">10. Dos and Don'ts</a></h1>
+</section>

@@ -1,0 +1,34 @@
+{%- comment -%}
+
+Default layout for all templates.
+
+Documentation: https://help.shopify.com/en/themes/development/layouts/theme-liquid
+
+Objects Referenced:
+ • content_for_header https://help.shopify.com/en/themes/liquid/objects#content_for_header
+ • content_for_layout https://help.shopify.com/en/themes/liquid/objects#content_for_layout
+ • settings https://help.shopify.com/en/themes/liquid/objects#settings
+ • shop https://help.shopify.com/en/themes/liquid/objects#shop
+ • template https://help.shopify.com/en/themes/liquid/objects#template
+
+{%- endcomment -%}
+
+<!DOCTYPE html>
+<html class="js-noscript" lang="{{ shop.locale }}">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+  <script src="{{ 'js_theme.js' | asset_url }}" defer></script>
+
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template.name }}">
+  <h1>Hello {{ shop.address.city }}</h1>
+  <main id="MainContent" role="main">
+    {{ content_for_layout }}
+  </main>
+</body>
+</html>
