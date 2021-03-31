@@ -1,0 +1,12 @@
+<ul class="ul-menu-level-{{ id }}">
+    {% for link in menu.links %}
+    <li class="li-menu-{{ val }}">
+        {% assign val = val | plus:1 %}
+        <a class="navbar-item menu-level-{{ id }}" href="{{ link.url }}">{{ link.title }}</a>
+        {% if link.links.size > 0 %}  
+            {% assign id = id | plus:1 %}
+            {% render 'menu', menu:link id:id val:val %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>

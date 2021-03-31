@@ -1,0 +1,21 @@
+<header id="site-header">
+    <div id="header-container">
+        <div id="header-logo">
+            <div class="link-container">
+                <a class="header-icon-link" href="{{ routes.root_url }}">
+                    <i class="fas fa-tshirt fa-2x icon"></i><h1 class="icon-text">Threads</h1>
+                </a>
+            </div>
+        </div>
+        <nav id="navbar">
+            {% render 'menu', menu:linklists['main-menu'] id:1 val:1 %}
+        </nav>
+        <div id="header-cart">
+            <div class="link-container">
+                <a href="{{ routes.cart_url }}">
+                    <i class="fas fa-shopping-cart fa-2x icon"></i>
+                </a>
+            <div class="link-container">
+        </div>
+    </div>
+</header>

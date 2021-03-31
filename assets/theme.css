@@ -1,0 +1,114 @@
+#site-header {
+    position: fixed;
+    display: flex;
+    height: 68px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(238, 238, 238);
+}
+#header-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+}
+#navbar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navbar a:hover, .shop-button:hover {
+    text-decoration: underline;
+}
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 50px;
+    width: 100%;
+}
+#header-cart {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    width:25%;
+}
+#header-container {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#header-container a {
+    text-decoration: none;
+    width: 25%;
+}
+.navbar-item {
+    margin-right: 20px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(43, 46, 49);
+    text-decoration: none;
+    cursor: pointer;
+}
+.spacer {
+    margin-top: 68px;
+}
+.icon {
+    color: rgb(43, 46, 49);
+}
+.icon-text {
+    padding-left: 15px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    color: rgb(43, 46, 49);
+}
+.shop-button {
+    border: none;
+    background: none;
+}
+.header-icon-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.link-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.ul-menu-level-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.li-menu-2 { /* button container */
+    position: relative;
+    display: inline-block;
+}
+.li-menu-2 .ul-menu-level-2 { /* menu content */
+    display: none;
+    position: fixed;
+    max-width: 150px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+    z-index: 1;
+}
+.ul-menu-level-2 .menu-level-2 { /* menu content anchors */
+    text-decoration: none;
+    display: inline;
+    margin: 10px 5px;
+}
+.li-menu-2:hover .ul-menu-level-2 { /* show content on hover */
+    display: block;
+}

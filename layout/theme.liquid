@@ -16,6 +16,7 @@ Objects Referenced:
 <!DOCTYPE html>
 <html class="js-noscript" lang="{{ shop.locale }}">
 <head>
+  <script src="https://kit.fontawesome.com/fab08d0de6.js" crossorigin="anonymous"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -26,7 +27,10 @@ Objects Referenced:
   {{ content_for_header }}
 </head>
 <body class="template-{{ template.name }}">
+  {% render 'header' %}
+  <div class="spacer"></div>
   <h1>Hello {{ shop.address.city }}!</h1>
+  
   <main id="MainContent" role="main">
     {{ content_for_layout }}
   </main>
