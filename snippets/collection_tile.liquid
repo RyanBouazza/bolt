@@ -1,0 +1,15 @@
+<ul class="collection-tile-grid">
+  {% paginate collection.products by 12 %}
+    {% for product in collection.products %}
+      <li class="collection-tile">
+        <a class="collection-item-link" href="{{ product.url }}">
+          <div class="collection-item">
+              <div class="product-picture">{{ product.featured_image | | img_url: '250x250' | img_tag }}</div>
+              <div class="collection-item-name">{{ product.title }}</div>
+              <div class="product-price">{{ product.price | money }}</div>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  {% endpaginate %}
+</ul>

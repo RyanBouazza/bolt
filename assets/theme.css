@@ -1,3 +1,4 @@
+/* Header CSS */
 #site-header {
     position: fixed;
     display: flex;
@@ -22,14 +23,10 @@
     justify-content: center;
     align-items: center;
 }
-#navbar a:hover, .shop-button:hover {
-    text-decoration: underline;
-}
 #navbar ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    height: 50px;
     width: 100%;
 }
 #header-cart {
@@ -50,7 +47,8 @@
     width: 25%;
 }
 .navbar-item {
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
     font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     font-style: normal;
     font-size: 20px;
@@ -112,3 +110,64 @@
 .li-menu-2:hover .ul-menu-level-2 { /* show content on hover */
     display: block;
 }
+#navbar a:hover, .shop-button:hover {
+    text-decoration: underline;
+}
+
+/* Collection CSS */
+.collection-section {
+    padding: 0 50px;
+    max-width: 1120px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+.collection-title-text {
+    padding-top: 25px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+}
+.collection-tile {
+    width: 25%;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    margin-left: -30px;
+}
+.collection-item {
+    cursor: pointer;
+}
+.collection-item-link {
+    text-decoration: none;
+}
+.collection-tile-grid {
+    list-style-type: none;
+    width: 100%;
+    padding: 25px 0 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.collection-item-name {
+    padding-top: 5px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(43, 46, 49);
+}
+.seperator {
+    width: 100%;
+    background-color: rgb(204, 204, 204);
+    height: 1px;
+}
+.collection-tile:hover .collection-item-name {
+    text-decoration: underline;
+}
+.product-price {
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(43, 46, 49);
+}
+
+/* Product CSS */
