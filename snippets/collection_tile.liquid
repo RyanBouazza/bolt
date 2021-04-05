@@ -4,9 +4,9 @@
       <li class="collection-tile">
         <a class="collection-item-link" href="{{ product.url }}">
           <div class="collection-item">
-              <div class="product-picture">{{ product.featured_image | | img_url: '250x250' | img_tag }}</div>
-              <div class="collection-item-name">{{ product.title }}</div>
-              <div class="product-price">{{ product.price | money }}</div>
+              <div class="product-picture">{{ product.featured_image | | img_url: '250x250', crop:'center' | img_tag }}</div>
+              <h2 class="collection-item-name">{{ product.title }}</h2>
+              <p class="collection-product-price">{{ product.price | money }}</p>
           </div>
         </a>
       </li>
