@@ -16,7 +16,7 @@
       <h1 class="product-name text">{{ product.title }}</h1>
       <p class="product-price text">{{ product.price | money }}</p>
       <div class="seperator"></div>
-      <form class="product-form">
+      <div class="product-form">
       {% form "product", product %}
         {% assign firstVariant = product.variants | first %}
         {% if firstVariant.title != "Default Title" %}
@@ -35,7 +35,7 @@
         </div>
         <input id="product-cart-button" class="product-add-cart" type="submit" value="Add to cart">
       {% endform %}
-      </form>
+      </div>
       <div class="seperator"></div>
       {% if product.description %}
         <p class="product-description">{{ product.description }}</p>
