@@ -289,3 +289,39 @@ img {
 .product-description {
     margin-top: 24px;
 }
+
+/* list-collections CSS */
+.collections-item {
+    display: inline-block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 0;
+    border: 2px solid rgb(43, 46, 49);
+}
+.collections-item a {
+    text-decoration: none;
+    color: rgb(43, 46, 49);
+}
+.collections-item:hover .collections-item-name {
+    text-decoration: underline;
+}
+.collections-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 5fr;
+    column-gap: 16px;
+    row-gap: 32px;
+}
+.collections-grid > img {
+    border-right: 1px solid rgb(43, 46, 49);
+}
+.collections-item-name {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    text-align: left;
+}
+.collections-description {
+    margin: 0;
+    padding: 16px 8px;
+    border-left: 1px solid rgb(43, 46, 49);
+}

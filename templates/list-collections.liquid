@@ -1,23 +1,19 @@
-{%- comment -%}
-
-Default collection list template.
-
-Documentation: https://help.shopify.com/en/themes/development/templates/list-collections-liquid
-
-Objects Referenced:
- • collections https://help.shopify.com/en/themes/liquid/objects#collections
-
-{%- endcomment -%}
-
-<article class="collections">
-  <h1 class="collections__title">{{ page_title }}</h1>
-  <div class="collections__list">
-    {% for collection in collections %}
-      {% include 'collection__tile' %}
-    {% else %}
-      <div class="collections__empty">
-        <p>{{ 'collections.list.empty' | t }}</p>
-      </div>
-    {% endfor %}
-  </div>
-</article>
+<div class="collection-section">
+  <h1 class="collection-title-text">Collections</h1>
+</div>
+<div class="seperator"></div>
+<div class="collection-section product-description">
+  {% for collection in collections %}
+    <div class="collections-item">
+      <a href="{{ collection.url }}">
+        <div class="collections-grid">
+          {% if collection.image %} {{ collection.image | img_url: '128x128', crop:'center' | img_tag }}
+          {%- else -%} {{ collection.products[0].featured_image | img_url: '128x128', crop:'center' | img_tag }}
+          {% endif %}
+          <h2 class="collections-item-name">{{ collection.title }}</h2>
+          <p class="collections-description">{{ collection.description }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
