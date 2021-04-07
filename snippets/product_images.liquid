@@ -1,6 +1,6 @@
 <ul class="product-small-pictures">
     {% for picture in product.images %}
-        <li id="product-image-{{ id }}" class="product-small-img-container">{{ picture | | img_url: '120x120', crop:'center' | img_tag }}</li>
+        <li id="product-image-{{ id }}" class="product-small-img-container">{{ picture | img_url: '120x120', crop:'center' | img_tag }}</li>
         {% assign id = id | | plus: 1 %}
     {% endfor %}
 </ul>
